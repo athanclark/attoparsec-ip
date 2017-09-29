@@ -43,34 +43,26 @@ ipv4 = do
 
 ipv6 :: Parser IPv6
 ipv6 = do
-  a <- chunk
+  a <- hexadecimal
   void $ char ':'
-  b <- chunk
+  b <- hexadecimal
   void $ char ':'
-  c <- chunk
+  c <- hexadecimal
   void $ char ':'
-  d <- chunk
+  d <- hexadecimal
   void $ char ':'
   (e,f,g,h) <- do
     let anotherColon = do
           void $ char ':'
           pure (0,0,0,0)
         moreChunks = do
-          e' <- chunk
+          e' <- hexadecimal
           void $ char ':'
-          f' <- chunk
+          f' <- hexadecimal
           void $ char ':'
-          g' <- chunk
+          g' <- hexadecimal
           void $ char ':'
-          h' <- chunk
+          h' <- hexadecimal
           pure (e',f',g',h')
     anotherColon <|> moreChunks
   pure (IPv6.fromWord16s a b c d e f g h)
-  where
-    chunk :: Parser Word16
-    chunk = do
-      (a,b,c,d) <- (,,,) <$> hexadecimal <*> hexadecimal <*> hexadecimal <*> hexadecimal
-      pure $ fromInteger $ a * (16^3)
-                         + b * (16^2)
-                         + c * 16
-                         + d
