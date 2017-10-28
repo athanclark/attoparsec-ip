@@ -1,5 +1,5 @@
 name:                attoparsec-ip
-version:             0.0.0
+version:             0.0.1
 synopsis:            Parse IP data types with attoparsec
 -- description:
 homepage:            https://github.com/athanclark/attoparsec-ip#readme
