@@ -18,7 +18,7 @@ library
   exposed-modules:     Data.Attoparsec.IP
   build-depends:       base >= 4.7 && < 5
                      , attoparsec
-                     , ip
+                     , ip >= 1.1.0
   default-language:    Haskell2010
 
 test-suite attoparsec-ip-test
