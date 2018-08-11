@@ -1,35 +1,62 @@
-name:                attoparsec-ip
-version:             0.0.1
-synopsis:            Parse IP data types with attoparsec
--- description:
-homepage:            https://github.com/athanclark/attoparsec-ip#readme
-license:             BSD3
-license-file:        LICENSE
-author:              Athan Clark
-maintainer:          athan.clark@gmail.com
-copyright:           BSD-3
-category:            Web
-build-type:          Simple
-extra-source-files:  README.md
-cabal-version:       >=1.10
+-- This file has been generated from package.yaml by hpack version 0.21.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 752338db2f40ec721645dec093759863a55ecbe09b0f85828e85167a6c599484
 
-library
-  hs-source-dirs:      src
-  exposed-modules:     Data.Attoparsec.IP
-  build-depends:       base >= 4.7 && < 5
-                     , attoparsec
-                     , ip >= 1.1.0
-  default-language:    Haskell2010
+name:           attoparsec-ip
+version:        0.0.2
+synopsis:       Parse IP data types with attoparsec
+description:    Please see the README on GitHub at <https://github.com/githubuser/purescript-iso#readme>
+category:       Web
+homepage:       https://github.com/athanclark/attoparsec-ip#readme
+bug-reports:    https://github.com/athanclark/attoparsec-ip/issues
+author:         Athan Clark
+maintainer:     athan.clark@localcooking.com
+copyright:      2018 (c) Local Cooking Inc.
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
 
-test-suite attoparsec-ip-test
-  type:                exitcode-stdio-1.0
-  hs-source-dirs:      test
-  main-is:             Spec.hs
-  build-depends:       base
-                     , attoparsec-ip
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  default-language:    Haskell2010
+extra-source-files:
+    README.md
 
 source-repository head
-  type:     git
+  type: git
   location: https://github.com/athanclark/attoparsec-ip
+
+library
+  exposed-modules:
+      Data.Attoparsec.IP
+  other-modules:
+      Paths_attoparsec_ip
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      attoparsec
+    , base >=4.7 && <4.11
+    , ip >=1.3.0 && <1.4.0
+    , vector
+  default-language: Haskell2010
+
+test-suite purescript-iso-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_attoparsec_ip
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , attoparsec
+    , attoparsec-ip
+    , base >=4.7 && <4.11
+    , ip
+    , tasty
+    , tasty-quickcheck
+    , text
+    , vector
+  default-language: Haskell2010
