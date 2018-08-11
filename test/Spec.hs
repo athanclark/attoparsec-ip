@@ -27,8 +27,8 @@ main = defaultMain $ testGroup "IP tests"
 
 
 parsePrintIso :: Eq a => (a -> Text) -> Parser a -> a -> Result
-parsePrintIso print parser x = case parseOnly parser (print x) of
-  Left e -> failed
+parsePrintIso print' parser x = case parseOnly parser (print' x) of
+  Left _ -> failed
   Right y
     | y == x -> succeeded
     | otherwise -> failed

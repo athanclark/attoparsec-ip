@@ -4,7 +4,7 @@
   , RecordWildCards
   #-}
 
-module Data.Attoparsec.IP where
+module Data.Attoparsec.IP (ipv4, ipv6) where
 
 import Data.Attoparsec.Text (Parser, char, string, digit, hexadecimal, many1)
 import Data.Word (Word8, Word16)
