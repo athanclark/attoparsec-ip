@@ -16,7 +16,7 @@ category:            Web
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/purescript-iso#readme>
+description:         Please see the README on GitHub at <https://github.com/athanclark/attoparsec-ip#readme>
 
 ghc-options:
   - -Wall
@@ -31,7 +31,7 @@ library:
   source-dirs: src
 
 tests:
-  purescript-iso-test:
+  attoparsec-ip-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
