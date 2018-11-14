@@ -1,5 +1,5 @@
 name:                attoparsec-ip
-version:             0.0.4
+version:             0.0.5
 github:              "athanclark/attoparsec-ip"
 license:             BSD3
 author:              "Athan Clark"
@@ -24,7 +24,7 @@ ghc-options:
 dependencies:
 - base >= 4.11 && < 5
 - attoparsec
-- ip >= 1.4.0
+- ip >= 1.4.1
 - vector
 
 library:
